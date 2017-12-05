@@ -16,3 +16,11 @@
 .footer{
 	text-align: center;
 }
+
+.register {
+	float: right !important;
+}
+
+.register a{
+	display: inline-block !important;
+}
