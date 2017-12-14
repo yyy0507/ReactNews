@@ -105,7 +105,7 @@ class PCHeader extends React.Component{
 		<Menu.Item key="logout" class="register">
 			<Button type="primary" htmlType="button">{this.state.userNickName}</Button>
 			&nbsp;&nbsp;
-			<Link target="_blank">
+			<Link target="_blank" to={`/usercenter`}>
 				<Button type="dashed" htmlType="button">个人中心</Button>
 			</Link>
 			&nbsp;&nbsp;
@@ -118,14 +118,14 @@ class PCHeader extends React.Component{
 		return (
 			<header>
 				<Row>
-					<Col span={2}></Col>
+					<Col span={1}></Col>
 					<Col span={4}>
 						<a href="/" class="logo">
 							<img src="./src/images/logo.png" alt="logo" />
 							<span>ReactNews</span>
 						</a>
 					</Col>
-					<Col span={16}>
+					<Col span={18}>
 						<Menu mode="horizontal" onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]}>
 							<Menu.Item key="top">
 								<Icon type="appstore" />头条
@@ -187,7 +187,7 @@ class PCHeader extends React.Component{
 
 
 					</Col>
-					<Col span={2}></Col>
+					<Col span={1}></Col>
 				</Row>
 			</header>
 		);

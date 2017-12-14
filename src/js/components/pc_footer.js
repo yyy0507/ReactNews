@@ -9,7 +9,7 @@ export default class PCHeader extends React.Component{
 				<Row>
 					<Col span={2}></Col>
 					<Col span={20} class="footer">
-						&copy;&nbsp;2016 ReactNews. ALL Rights Reserver.
+						&copy;&nbsp;2017 ReactNews. ALL Rights Reserver.
 					</Col>
 					<Col span={2}></Col>
 				</Row>

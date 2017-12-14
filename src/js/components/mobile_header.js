@@ -97,7 +97,7 @@ class MobileHeader extends React.Component{
 	render(){
 		let {getFieldProps} = this.props.form;
 		const userShow = this.state.hasLogined ?
-		<Link target="_blank">
+		<Link to={`usercenter`}>
 			<Icon type="inbox"/>
 		</Link>
 		:

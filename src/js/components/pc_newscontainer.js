@@ -7,6 +7,8 @@ const TabPane = Tabs.TabPane;
 import PCNewsBlock from './pc_news_block';
 import PCNewsImageBlock from './pc_news_image_block';
 
+import PCProduct from './pc_products';
+
 export default class PCNewsContainer extends React.Component{
 	render(){
 
@@ -20,8 +22,8 @@ export default class PCNewsContainer extends React.Component{
 		return (
 			<div>
 				<Row>
-					<Col span={2}></Col>
-					<Col span={20} class="container">
+					<Col span={1}></Col>
+					<Col span={22} class="container">
 						<div class="leftContainer">
 							<div class="carousel">
 								<Carousel {...setting}>
@@ -41,12 +43,17 @@ export default class PCNewsContainer extends React.Component{
 								<PCNewsBlock count={22} type="guoji" width="100%" border="false" />
 							</TabPane>
 						</Tabs>
+						<Tabs class="tabs_product">
+							<TabPane tab="ReactNews 产品" key="1">
+								<PCProduct />
+							</TabPane>
+						</Tabs>
 						<div>
 							<PCNewsImageBlock count={8} type="guonei" width="100%" cardTitle="国内新闻" imageWidth="132px"/>
-							<PCNewsImageBlock count={16} type="yule" width="100%" cardTitle="娱乐新闻" imageWidth="132px"/>
+							<PCNewsImageBlock count={8} type="yule" width="100%" cardTitle="娱乐新闻" imageWidth="132px"/>
 						</div>
 					</Col>
-					<Col span={2}></Col>
+					<Col span={1}></Col>
 				</Row>
 			</div>
 		)
