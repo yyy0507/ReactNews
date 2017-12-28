@@ -37,10 +37,10 @@ export default class PCNewsContainer extends React.Component{
 						</div>
 						<Tabs class="tabs_news">
 							<TabPane tab="头条新闻" key="1">
-								<PCNewsBlock count={22} type="top" width="100%" border="false" />
+								<PCNewsBlock count={22} type="top" width="100%" bordered="false" />
 							</TabPane>
 							<TabPane tab="国际" key="2">
-								<PCNewsBlock count={22} type="guoji" width="100%" border="false" />
+								<PCNewsBlock count={22} type="guoji" width="100%" bordered="false" />
 							</TabPane>
 						</Tabs>
 						<Tabs class="tabs_product">

@@ -15,7 +15,7 @@ const FormItem = Form.Item;
 const SubMenu = Menu.SubMenu;
 const TabPane = Tabs.TabPane;
 const MenuItemGroup = Menu.ItemGroup;
-import {Router, Route, Link, browserHistory} from 'react-router'
+import {Link} from 'react-router-dom';
 class PCHeader extends React.Component{
 	
 	constructor(){
@@ -100,7 +100,7 @@ class PCHeader extends React.Component{
 		this.setState({hasLogined:false});
 	};
 	render(){
-		let {getFieldProps} = this.props.form;
+		let {getFieldDecorator} = this.props.form;
 		const userShow = this.state.hasLogined ? 
 		<Menu.Item key="logout" class="register">
 			<Button type="primary" htmlType="button">{this.state.userNickName}</Button>
@@ -121,7 +121,7 @@ class PCHeader extends React.Component{
 					<Col span={1}></Col>
 					<Col span={4}>
 						<a href="/" class="logo">
-							<img src="./src/images/logo.png" alt="logo" />
+							<img src="/src/images/logo.png" alt="logo" />
 							<span>ReactNews</span>
 						</a>
 					</Col>
@@ -158,10 +158,10 @@ class PCHeader extends React.Component{
 								<TabPane tab="登录" key="1">
 									<Form layout="horizontal" onSubmit={this.handleSubmit.bind(this)}>
 										<FormItem label="账户">
-											<Input placeholder="请输入您的账号" {...getFieldProps('userName')} />
+											{getFieldDecorator('userName')(<Input placeholder="请输入您的账号" />)}
 										</FormItem>
 										<FormItem label="密码">
-											<Input type="password" placeholder="请输入您的密码" {...getFieldProps('password')} />
+											{getFieldDecorator('password')(<Input type="password" placeholder="请输入您的密码" />)}
 										</FormItem>
 										<Button type="primary" htmlType="submit">登录</Button>
 									</Form>
@@ -171,13 +171,13 @@ class PCHeader extends React.Component{
 								<TabPane tab="注册" key="2">
 									<Form layout="horizontal" onSubmit={this.handleSubmit.bind(this)}>
 										<FormItem label="账户">
-											<Input placeholder="请输入您的账号" {...getFieldProps('r_userName')} />
+											{getFieldDecorator('r_userName')(<Input placeholder="请输入您的账号" />)}
 										</FormItem>
 										<FormItem label="密码">
-											<Input type="password" placeholder="请输入您的密码" {...getFieldProps('r_password')} />
+											{getFieldDecorator('r_password')(<Input type="password" placeholder="请输入您的密码" />)}
 										</FormItem>
 										<FormItem label="确认密码">
-											<Input type="password" placeholder="请再次输入您的密码" {...getFieldProps('r_confirmPassword')} />
+											{getFieldDecorator('r_confirmPassword')(<Input type="password" placeholder="请再次输入您的密码" />)}											
 										</FormItem>
 										<Button type="primary" htmlType="submit">注册</Button>
 									</Form>

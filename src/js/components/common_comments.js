@@ -61,7 +61,7 @@ class CommonComments extends React.Component{
 		))
 	};
 	render(){
-		let {getFieldProps} = this.props.form;
+		let {getFieldDecorator} = this.props.form;
 		const {comments} = this.state;
 		const commentList = comments.length 
 		? comments.map((comment,index)=>(
@@ -78,7 +78,7 @@ class CommonComments extends React.Component{
 						{commentList}
 						<Form onSubmit = {this.handleSubmit.bind(this)}>
 							<FormItem label="您的评论">
-								<Input type="textarea" placeholder="随便写" {...getFieldProps('remark',{initialValue: ''})}/>
+								{getFieldDecorator('remark')(<Input type="textarea" placeholder="随便写"/>)}
 							</FormItem>
 							<Button type="primary" htmlType="submit">提交评论</Button>
 							&nbsp;&nbsp;

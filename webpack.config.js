@@ -2,8 +2,14 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
+	devtool: 'eval-source-map',
 	context: __dirname + '/src',
 	entry: './js/root.js',
+	devServer: {
+		historyApiFallback: true,
+        inline: true,//实时刷新,
+        hot: true
+    },
 	module: {
 		loaders: [
 		{
@@ -20,7 +26,7 @@ module.exports = {
 			test: /\.css$/,
 			//loader: "style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]"
 			loader: 'style-loader!css-loader'
-		},
+		}
 		]
 	},
 	output: {

@@ -16,7 +16,7 @@ export default class PCNewsDetails extends React.Component{
 		var myFetchOptions = {
 			method: 'GET'
 		};
-		fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=" + this.props.params.uniquekey, myFetchOptions)
+		fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=" + this.props.match.params.uniquekey, myFetchOptions)
 		.then(response => response.json())
 		.then(json => {
 			this.setState({newsItem: json});
@@ -35,7 +35,7 @@ export default class PCNewsDetails extends React.Component{
 					<Col span={14} className="container">
 						<div class="articleContainer" dangerouslySetInnerHTML={this.createMarkup()}></div>
 						<hr />
-						<CommonComments uniquekey={this.props.params.uniquekey}/>
+						<CommonComments uniquekey={this.props.match.params.uniquekey}/>
 					</Col>
 					<Col span={6}>
 						<PCNewsImageBlock count={10} type="top" width="106%" cardTitle="相关新闻" imageWidth="150px"></PCNewsImageBlock>
